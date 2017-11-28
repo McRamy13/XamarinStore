@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace XamarinStore.model
 {
-    [Table("Case")]
-    class Case
+    [Table("Ram")]
+    class Ram
     {
         //properties
-        [PrimaryKey, AutoIncrement, Column("_idCase")]
-        public int IdCase { get; set; }
+        [PrimaryKey, AutoIncrement, Column("_idRam")]
+        public int IdRam { get; set; }
 
         [MaxLength(250), NotNull]
         public string name { get; set; }
 
 
         [MaxLength(20), NotNull]
-        public string type { get; set; }
+        public string frecuency { get; set; }
 
         [NotNull]
         public double price { get; set; }
