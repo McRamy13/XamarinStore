@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace XamarinStore.model
 {
     [Table("Pedido")]
-    class Pedido
+    public class Pedido
     {
         //properties
         [PrimaryKey, AutoIncrement, Column("_idPedido")]

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace XamarinStore.model
 {
     [Table("User")]
-    class User
+    public class User
     {
         //properties
         [PrimaryKey,  Column("_codUser"), MaxLength(4), Unique]
@@ -21,7 +21,7 @@ namespace XamarinStore.model
         public string Password { get; set; }
 
         [MaxLength(7), NotNull]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         
     }

@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 namespace XamarinStore.model
 {
     [Table("CPU")]
-    class CPU
+    public class CPU
     {
         //properties
         [PrimaryKey, AutoIncrement, Column("_idCpu")]
         public int IdCpu { get; set; }
 
         [MaxLength(250), NotNull]
-        public string name { get; set; }
+        public string Name { get; set; }
 
 
         [MaxLength(20), NotNull]
-        public string socket { get; set; }
+        public string Socket { get; set; }
 
         [NotNull]
-        public double price { get; set; }
+        public double Price { get; set; }
 
         [MaxLength(1000)]
-        public string description { get; set; }
+        public string Description { get; set; }
     }
 }
