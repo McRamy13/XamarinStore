@@ -26,6 +26,7 @@ namespace XamarinStore.assets
             try
             {
                 //basic validation to ensure a name was entered
+                //sdgsfgsdfg
                 if (string.IsNullOrEmpty(name))
                     throw new Exception("Valid name required");
 
