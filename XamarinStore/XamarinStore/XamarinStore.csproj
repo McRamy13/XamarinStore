@@ -44,6 +44,10 @@
     </Compile>
     <Compile Include="model\Case.cs" />
     <Compile Include="model\CPU.cs" />
+    <Compile Include="model\GPU.cs" />
+    <Compile Include="model\MotherBoard.cs" />
+    <Compile Include="model\Ram.cs" />
+    <Compile Include="model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,5 +13,6 @@ namespace XamarinStore
         {
             InitializeComponent();
         }
+        //todo revisar codigo (David sube plantilla)
     }
 }

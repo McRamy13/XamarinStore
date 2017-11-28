@@ -11,8 +11,8 @@ namespace XamarinStore.model
     class CPU
     {
         //properties
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id { get; set; }
+        [PrimaryKey, AutoIncrement, Column("_idCpu")]
+        public int IdCpu { get; set; }
 
         [MaxLength(250), NotNull]
         public string name { get; set; }
