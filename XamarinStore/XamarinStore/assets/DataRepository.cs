@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using XamarinStore.model;
 
-namespace XamarinStore.assets
+namespace XamarinStore
 {
-    class DataRepository
+    public class DataRepository
     {
         public string StatusMessage { get; set; }
         private SQLiteConnection conn;

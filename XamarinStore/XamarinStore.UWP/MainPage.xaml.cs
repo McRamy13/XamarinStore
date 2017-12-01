@@ -20,8 +20,8 @@ namespace XamarinStore.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
-            LoadApplication(new XamarinStore.App());
+            String dbPath = FileAccessHelper.GetLocalFilePath("store.db3");
+            LoadApplication(new XamarinStore.App(dbPath));
         }
     }
 }

@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Xamarin.Forms;
-
 namespace XamarinStore
 {
+
     public partial class App : Application
     {
-        public App()
+        public static DataRepository DataRepo { get; set; }
+        public App(string filename)
         {
             InitializeComponent();
-
+            DataRepo = new DataRepository(filename);
             MainPage = new XamarinStore.MainPage();
         }
 
