@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace XamarinStore.model
 {
-    [Table("Case")]
-    public class Case
+    [Table("PcBox")]
+    public class PcBox
     {
         //properties
-        [PrimaryKey, AutoIncrement, Column("_idCase")]
+        [PrimaryKey, AutoIncrement, Column("_idBox")]
         public int IdCase { get; set; }
 
         [MaxLength(250), NotNull]

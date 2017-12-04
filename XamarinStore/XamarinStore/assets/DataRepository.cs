@@ -24,7 +24,7 @@ namespace XamarinStore
         private void createTables(SQLiteConnection conn)
         {
             // TODO: Crear todas las tablas
-            conn.CreateTable<Case>();
+            conn.CreateTable<PcBox>();
             conn.CreateTable<CPU>();
             conn.CreateTable<GPU>();
             conn.CreateTable<MotherBoard>();
@@ -56,15 +56,15 @@ namespace XamarinStore
 
         }
 
-        public List<Case> GetAllCases()
+        public List<PcBox> GetAllCases()
         {
             //Variable con lista de cases
-            List<Case> casesList = new List<Case>();
+            List<PcBox> casesList = new List<PcBox>();
 
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                casesList = conn.Table<Case>().ToList();
+                casesList = conn.Table<PcBox>().ToList();
             }
             catch (Exception ex)
             {
@@ -189,6 +189,5 @@ namespace XamarinStore
             return listUsers;
         }
         //---------------- [ get data methods ] -----------------
-
     }
 }
