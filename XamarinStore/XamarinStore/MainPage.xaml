@@ -2,10 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinStore"
-             x:Class="XamarinStore.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+             x:Class="XamarinStore.MainPage"
+             BackgroundColor="#FAF3DD">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"  VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Label TextColor="#EE6055" Text="Inicio de sesión" FontSize="32" FontAttributes="Bold"  
+                       HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
+                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Placeholder="Usuario" x:Name="txtUser"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
+                <Entry HorizontalOptions="FillAndExpand" IsPassword="true" Placeholder = "Contraseña" VerticalOptions="FillAndExpand" x:Name="txtPasswd"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
+                <Button HorizontalOptions="FillAndExpand" Text="Iniciar sesión" VerticalOptions="FillAndExpand" x:Name="btnLogin"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

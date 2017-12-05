@@ -12,6 +12,16 @@ namespace XamarinStore
         public MainPage()
         {
             InitializeComponent();
+            btnLogin.Clicked += (sender, args) =>
+            {
+                checkUser();
+            };
+        }
+
+        private void checkUser()
+        {
+            //Obtenemos los datos
+            txtUser.get
         }
     }
 }

@@ -11,52 +11,32 @@ namespace XamarinStore
     public class DataRepository
     {
         public string StatusMessage { get; set; }
-        private SQLiteConnection conn;
+        private SQLiteAsyncConnection conn;
 
         public DataRepository(string dbPath)
         {
             // TODO: Initialize a new SQLiteConnection
-            conn = new SQLiteConnection(dbPath);
+            conn = new SQLiteAsyncConnection(dbPath);
             createTables(conn);
         }
 
         //---------------- [ table creations ] -----------------
-        private void createTables(SQLiteConnection conn)
+        private void createTables(SQLiteAsyncConnection conn)
         {
             // TODO: Crear todas las tablas
-            conn.CreateTable<PcBox>();
-            conn.CreateTable<CPU>();
-            conn.CreateTable<GPU>();
-            conn.CreateTable<MotherBoard>();
-            conn.CreateTable<Pedido>();
-            conn.CreateTable<Ram>();
-            conn.CreateTable<User>();
+            conn.CreateTableAsync<PcBox>();
+            conn.CreateTableAsync<CPU>();
+            conn.CreateTableAsync<GPU>();
+            conn.CreateTableAsync<MotherBoard>();
+            conn.CreateTableAsync<Pedido>();
+            conn.CreateTableAsync<Ram>();
+            conn.CreateTableAsync<User>();
         }
         //---------------- [ table creations ] -----------------
 
         //---------------- [ get data methods ] -----------------
-        public void AddNewPerson(string name)
-        {
-            int result = 0;
-            try
-            {
-                //basic validation to ensure a name was entered
-                //sdgsfgsdfg
-                if (string.IsNullOrEmpty(name))
-                    throw new Exception("Valid name required");
 
-                // TODO: insert a new person into the Person table
-                //result = conn.Insert(new Person { Name = name });
-                StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, name);
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = string.Format("Failed to add {0}. Error: {1}", name, ex.Message);
-            }
-
-        }
-
-        public List<PcBox> GetAllCases()
+        public async Task<List<PcBox>> GetAllCases()
         {
             //Variable con lista de cases
             List<PcBox> casesList = new List<PcBox>();
@@ -64,7 +44,8 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                casesList = conn.Table<PcBox>().ToList();
+                casesList = await conn.Table<PcBox>().ToListAsync();
+
             }
             catch (Exception ex)
             {
@@ -75,15 +56,16 @@ namespace XamarinStore
             return casesList;
         }
 
-        public List<CPU> GetAllCpu()
+        public async Task<List<CPU>> GetAllCpu()
         {
             //Variable con lista de cases
             List<CPU> cpuList = new List<CPU>();
 
             try
             {
-                // TODO: return a list of cases saved to the Case table in the database
-                cpuList = conn.Table<CPU>().ToList();
+                //todo change comments
+                // TODO: return a list of CPU saved to the Case table in the database
+                cpuList = await conn.Table<CPU>().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -94,7 +76,7 @@ namespace XamarinStore
             return cpuList;
         }
 
-        public List<GPU> GetAllGpu()
+        public async Task<List<GPU>> GetAllGpu()
         {
             //Variable con lista de cases
             List<GPU> gpuList = new List<GPU>();
@@ -102,7 +84,7 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                gpuList = conn.Table<GPU>().ToList();
+                gpuList = await conn.Table<GPU>().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -113,7 +95,7 @@ namespace XamarinStore
             return gpuList;
         }
 
-        public List<MotherBoard> GetAllMotherBoards()
+        public async Task<List<MotherBoard>> GetAllMotherBoards()
         {
             //Variable con lista de cases
             List<MotherBoard> motherBoardList = new List<MotherBoard>();
@@ -121,7 +103,7 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                motherBoardList = conn.Table<MotherBoard>().ToList();
+                motherBoardList = await conn.Table<MotherBoard>().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -132,7 +114,7 @@ namespace XamarinStore
             return motherBoardList;
         }
 
-        public List<Pedido> GetAllPedidos()
+        public async Task<List<Pedido>> GetAllPedidos()
         {
             //Variable con lista de cases
             List<Pedido> listPedidos = new List<Pedido>();
@@ -140,7 +122,7 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                listPedidos = conn.Table<Pedido>().ToList();
+                listPedidos = await conn.Table<Pedido>().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -151,7 +133,7 @@ namespace XamarinStore
             return listPedidos;
         }
 
-        public List<Ram> GetAllRam()
+        public async Task<List<Ram>> GetAllRam()
         {
             //Variable con lista de cases
             List<Ram> listRam = new List<Ram>();
@@ -159,7 +141,7 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                listRam = conn.Table<Ram>().ToList();
+                listRam = await conn.Table<Ram>().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -170,7 +152,7 @@ namespace XamarinStore
             return listRam;
         }
 
-        public List<User> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
             //Variable con lista de cases
             List<User> listUsers = new List<User>();
@@ -178,7 +160,7 @@ namespace XamarinStore
             try
             {
                 // TODO: return a list of cases saved to the Case table in the database
-                listUsers = conn.Table<User>().ToList();
+                listUsers = await conn.Table<User>().ToListAsync();
             }
             catch (Exception ex)
             {
