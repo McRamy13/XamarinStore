@@ -8,19 +8,19 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinStore.model;
 
-namespace XamarinStore.user
+namespace XamarinStore.admin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserActivity : ContentPage
+    public partial class AdminActivity : ContentPage
     {
         private User user;
 
-        public UserActivity()
+        public AdminActivity()
         {
             InitializeComponent();
         }
 
-        public UserActivity(User user)
+        public AdminActivity(User user)
         {
             this.user = user;
         }

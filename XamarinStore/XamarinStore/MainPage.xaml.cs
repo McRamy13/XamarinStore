@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinStore.admin;
 using XamarinStore.model;
+using XamarinStore.user;
 
 namespace XamarinStore
 {
@@ -42,11 +44,11 @@ namespace XamarinStore
                     //miramos el tipo
                     if (user.Type.Equals("User"))
                     {
-                        ShowClientActivity("user");
+                        await ShowClientActivityAsync("user", user);
                     }
                     else
                     {
-                        ShowClientActivity("admin");
+                        await ShowClientActivityAsync("admin", user);
                     }
                 }
             }
@@ -58,9 +60,18 @@ namespace XamarinStore
 
         }
 
-        private void ShowClientActivity(string v)
+        private async Task ShowClientActivityAsync(string v, User user)
         {
-            throw new NotImplementedException();
+            switch (v)
+            {
+                case "user":
+                    await Navigation.PushModalAsync(new UserActivity(user));
+                    break;
+                case "admin":
+                    await Navigation.PushModalAsync(new AdminActivity(user));
+                    break;
+            }
+            
         }
     }
 }
