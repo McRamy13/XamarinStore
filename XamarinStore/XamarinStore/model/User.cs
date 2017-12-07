@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace XamarinStore.model
 {
@@ -23,6 +24,14 @@ namespace XamarinStore.model
         [MaxLength(7), NotNull]
         public string Type { get; set; }
 
-        
+        public static implicit operator Task<object>(User v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static implicit operator User(ObservableCollection<User> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

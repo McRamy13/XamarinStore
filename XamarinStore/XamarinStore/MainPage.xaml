@@ -11,13 +11,13 @@
                        HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Placeholder="Usuario" x:Name="txtUser"></Entry>
+                <Entry HorizontalOptions="FillAndExpand" Placeholder = "Usuario" VerticalOptions="FillAndExpand" x:Name="txtNick"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
-                <Entry HorizontalOptions="FillAndExpand" IsPassword="true" Placeholder = "Contraseña" VerticalOptions="FillAndExpand" x:Name="txtPasswd"></Entry>
+                <Entry HorizontalOptions="FillAndExpand" IsPassword="true" Placeholder = "Contraseña" VerticalOptions="FillAndExpand" x:Name="txtPasswd"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
-                <Button HorizontalOptions="FillAndExpand" Text="Iniciar sesión" VerticalOptions="FillAndExpand" x:Name="btnLogin"></Button>
+                <Button HorizontalOptions="FillAndExpand" Text="Iniciar sesión" VerticalOptions="FillAndExpand" x:Name="btnLogin"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

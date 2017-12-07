@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,44 +20,45 @@ namespace XamarinStore
             };
         }
 
-        private async Task CheckUserAsync()
+        private async void CheckUserAsync()
         {
             //Obtenemos los datos
             bool correcto = false;
-            string user;
-            string passwd;
-            User data;
-
-
-            user = txtUser.Text;
-            passwd = txtPasswd.Text;
+            string name = "";
+            string passwd = "";
+            User user;
+            //ObservableCollection<User> userList = new ObservableCollection<User>(await App.DataRepo.GetAllUsers());
+            //user = userList.SingleOrDefault(t => t.Nick == name);
+            name = txtNick.Text.ToString();
+            passwd = txtPasswd.Text.ToString();
             //Comprobamos los datos
-            data = await App.DataRepo.getUserByName(user);
+            user = await App.DataRepo.GetUserByName(name);
 
-            if(data != null)
+            if (user != null)
             {
-                if (data.Password.Equals(passwd))
+                if (user.Password.Equals(passwd))
                 {
                     //Si la password es correcta
                     //miramos el tipo
-                    if (data.Type.Equals("User"))
+                    if (user.Type.Equals("User"))
                     {
-                        showClientActivity("user");
+                        ShowClientActivity("user");
                     }
                     else
                     {
-                        showClientActivity("admin");
+                        ShowClientActivity("admin");
                     }
                 }
             }
             else
             {
                 //El usuario introducido no es válido
+                correcto = false;
             }
 
         }
 
-        private void showClientActivity(string v)
+        private void ShowClientActivity(string v)
         {
             throw new NotImplementedException();
         }

@@ -24,13 +24,13 @@ namespace XamarinStore
         private void createTables(SQLiteAsyncConnection conn)
         {
             // TODO: Crear todas las tablas
-            conn.CreateTableAsync<PcBox>();
-            conn.CreateTableAsync<CPU>();
-            conn.CreateTableAsync<GPU>();
-            conn.CreateTableAsync<MotherBoard>();
-            conn.CreateTableAsync<Pedido>();
-            conn.CreateTableAsync<Ram>();
-            conn.CreateTableAsync<User>();
+            conn.CreateTableAsync<PcBox>().Wait();
+            conn.CreateTableAsync<CPU>().Wait();
+            conn.CreateTableAsync<GPU>().Wait();
+            conn.CreateTableAsync<MotherBoard>().Wait();
+            conn.CreateTableAsync<Pedido>().Wait();
+            conn.CreateTableAsync<Ram>().Wait();
+            conn.CreateTableAsync<User>().Wait();
         }
         //---------------- [ table creations ] -----------------
 
@@ -172,12 +172,21 @@ namespace XamarinStore
         }
 
         //consulta para traer un sólo usuario
-        public Task<User> getUserByName(String name)
+        public async Task<User> GetUserByName(String name)
         {
-            var user = from p in conn.Table<User>()
+            User u = null;
+            try
+            {
+                var user = from p in conn.Table<User>()
                        where p.Nick == name
                        select p;
-            return user.FirstOrDefaultAsync();
+                u = await user.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
         }
         //---------------- [ get data methods ] -----------------
     }
