@@ -42,7 +42,7 @@ namespace XamarinStore
                 {
                     //Si la password es correcta
                     //miramos el tipo
-                    if (user.Type.Equals("User"))
+                    if (user.Tipo.Equals("User"))
                     {
                         await ShowClientActivityAsync("user", user);
                     }
@@ -71,7 +71,7 @@ namespace XamarinStore
                     await Navigation.PushModalAsync(new AdminActivity(user));
                     break;
             }
-            
+
         }
     }
 }

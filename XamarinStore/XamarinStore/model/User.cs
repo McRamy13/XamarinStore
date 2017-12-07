@@ -22,7 +22,7 @@ namespace XamarinStore.model
         public string Password { get; set; }
 
         [MaxLength(7), NotNull]
-        public string Type { get; set; }
+        public string Tipo { get; set; }
 
         public static implicit operator Task<object>(User v)
         {

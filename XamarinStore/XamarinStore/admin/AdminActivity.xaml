@@ -4,7 +4,7 @@
              x:Class="XamarinStore.admin.AdminActivity">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <Label Text="Admin activity" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

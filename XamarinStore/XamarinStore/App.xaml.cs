@@ -1,5 +1,7 @@
 ﻿
 using Xamarin.Forms;
+using XamarinStore.admin;
+
 namespace XamarinStore
 {
 
@@ -11,6 +13,7 @@ namespace XamarinStore
             InitializeComponent();
             DataRepo = new DBRepository(filename);
             MainPage = new XamarinStore.MainPage();
+           
         }
 
         protected override void OnStart()

@@ -14,15 +14,19 @@ namespace XamarinStore.admin
     public partial class AdminActivity : ContentPage
     {
         private User user;
-
-        public AdminActivity()
+        
+        //cambiamos el constructor por defecto dejándolo como privado
+        private AdminActivity()
         {
             InitializeComponent();
         }
 
+        //El nuevo constructor va a recibir el usuario que le hemos pasado por BBDD
         public AdminActivity(User user)
         {
             this.user = user;
+            InitializeComponent();
+
         }
     }
 }
