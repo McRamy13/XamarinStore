@@ -5,11 +5,11 @@ namespace XamarinStore
 
     public partial class App : Application
     {
-        public static DataRepository DataRepo { get; set; }
+        public static DBRepository DataRepo { get; set; }
         public App(string filename)
         {
             InitializeComponent();
-            DataRepo = new DataRepository(filename);
+            DataRepo = new DBRepository(filename);
             MainPage = new XamarinStore.MainPage();
         }
 

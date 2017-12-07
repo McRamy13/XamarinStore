@@ -8,12 +8,12 @@ using XamarinStore.model;
 
 namespace XamarinStore
 {
-    public class DataRepository
+    public class DBRepository
     {
         public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
-        public DataRepository(string dbPath)
+        public DBRepository(string dbPath)
         {
             // TODO: Initialize a new SQLiteConnection
             conn = new SQLiteAsyncConnection(dbPath);
@@ -169,6 +169,15 @@ namespace XamarinStore
 
             //Se devuelve la lista de personas
             return listUsers;
+        }
+
+        //consulta para traer un sólo usuario
+        public Task<User> getUserByName(String name)
+        {
+            var user = from p in conn.Table<User>()
+                       where p.Nick == name
+                       select p;
+            return user.FirstOrDefaultAsync();
         }
         //---------------- [ get data methods ] -----------------
     }
