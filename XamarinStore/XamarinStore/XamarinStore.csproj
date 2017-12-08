@@ -45,6 +45,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="model\Order.cs" />
     <Compile Include="model\PcBox.cs" />
     <Compile Include="model\CPU.cs" />
     <Compile Include="model\GPU.cs" />
