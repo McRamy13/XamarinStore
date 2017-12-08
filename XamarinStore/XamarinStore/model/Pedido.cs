@@ -31,5 +31,8 @@ namespace XamarinStore.model
 
         [NotNull]
         public int IdRam { get; set; }
+
+        [NotNull]
+        public double Price { get; set; }
     }
 }

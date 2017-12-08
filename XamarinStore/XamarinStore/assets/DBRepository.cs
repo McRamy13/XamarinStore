@@ -188,6 +188,114 @@ namespace XamarinStore
             }
             return u;
         }
+
+        //consulta para traer un sólo usuario
+        public async Task<User> GetUserById(String name)
+        {
+            User u = null;
+            try
+            {
+                var user = from p in conn.Table<User>()
+                           where p.IdUser == name
+                           select p;
+                u = await user.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
+
+        //consulta para traer un sólo cpu
+        public async Task<CPU> GetCPUById(int id)
+        {
+            CPU u = null;
+            try
+            {
+                var cpu = from p in conn.Table<CPU>()
+                           where p.IdCpu == id
+                           select p;
+                u = await cpu.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
+
+        //consulta para traer un sólo GPU
+        public async Task<GPU> GetGPUById(int id)
+        {
+            GPU u = null;
+            try
+            {
+                var gpu = from p in conn.Table<GPU>()
+                          where p.IdGpu == id
+                          select p;
+                u = await gpu.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
+
+        //consulta para traer una sola MotherBoard
+        public async Task<MotherBoard> GetMotherBoardId(int id)
+        {
+            MotherBoard u = null;
+            try
+            {
+                var motherBoard = from p in conn.Table<MotherBoard>()
+                          where p.IdMotherBoard == id
+                          select p;
+                u = await motherBoard.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
+
+        //consulta para traer una sola MotherBoard
+        public async Task<PcBox> GetPcBoxById(int id)
+        {
+            PcBox u = null;
+            try
+            {
+                var pcBox = from p in conn.Table<PcBox>()
+                          where p.IdCase == id
+                          select p;
+                u = await pcBox.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
+
+        //consulta para traer una sola MotherBoard
+        public async Task<Ram> GetRamById(int id)
+        {
+            Ram u = null;
+            try
+            {
+                var gpu = from p in conn.Table<Ram>()
+                          where p.IdRam == id
+                          select p;
+                u = await gpu.FirstAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+            return u;
+        }
         //---------------- [ get data methods ] -----------------
     }
 }

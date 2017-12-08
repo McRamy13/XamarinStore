@@ -1,10 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinStore.admin.AdminActivity">
+             x:Class="XamarinStore.admin.AdminActivity"
+             BackgroundColor="#FAF3DD">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Admin activity" />
+        <StackLayout Orientation="Vertical"  VerticalOptions="Start">
+            <StackLayout Orientation="Vertical" Padding="0,0,0,50">
+                <Label TextColor="#EE6055" Text="Administración" FontSize="32" FontAttributes="Bold"  
+                               HorizontalOptions="CenterAndExpand"  VerticalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,50,200,50">
+                <Label TextColor="#EE6055" Text="Pedidos" FontSize="32" FontAttributes="Bold"  
+                               HorizontalOptions="CenterAndExpand"  VerticalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,0,200,0">
+                <ListView x:Name="lstPedidos" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0" Text="{Binding NomUser}"></Label>
+                                        <Label Grid.Column="1" Text="{Binding NomCase}"></Label>
+                                        <Label Grid.Column="2" Text="{Binding NomCpu}"></Label>
+                                        <Label Grid.Column="3" Text="{Binding NomGpu}"></Label>
+                                        <Label Grid.Column="4" Text="{Binding NomMotherBoard}"></Label>
+                                        <Label Grid.Column="5" Text="{Binding NomRam}"></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="200,0,200,200" Margin="200,0,200,0">
+                <Button HorizontalOptions="FillAndExpand" Text="Precios" VerticalOptions="FillAndExpand"  x:Name="btnPrecios"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
