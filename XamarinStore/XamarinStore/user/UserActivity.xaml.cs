@@ -15,7 +15,7 @@ namespace XamarinStore.user
     {
         private User user;
 
-        public UserActivity()
+        private UserActivity()
         {
             InitializeComponent();
         }
