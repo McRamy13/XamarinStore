@@ -1,10 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinStore.user.UserActivity">
+             x:Class="XamarinStore.user.UserActivity"
+             BackgroundColor="#FAF3DD">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+        <StackLayout Orientation="Horizontal"   VerticalOptions="StartAndExpand" Padding="40">
+            <StackLayout Orientation="Vertical"  HorizontalOptions="StartAndExpand" Padding="100, 0, 30, 0">
+                <Label Text="Placa" Margin="0,30,0,10" />
+                <Picker Title="Seleccione una placa base"
+                        ItemsSource="{Binding MotherBoard}"
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="pickerMotherBoard"/>
+                <Label Text="Procesador" Margin="0,30,0,10" />
+                <Picker Title="Seleccione un procesador"
+                        ItemsSource="{Binding CPU}}"
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="pickerCpu"/>
+                <Label Text="Torre" Margin="0,30,0,10" />
+                <Picker Title="Seleccione una Torre"
+                        ItemsSource="{Binding PcBox}}"
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="pickerPcBox"/>
+                <Label Text="Memoria" Margin="0,30,0,10" />
+                <Picker Title="Seleccione una memoria"
+                        ItemsSource="{Binding Ram}}"
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="pickerRam"/>
+                <Label Text="Gráfica" Margin="0,30,0,10" />
+                <Picker Title="Seleccione una gráfica"
+                        ItemsSource="{Binding GPU}}"
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="pickerGpu"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical"  BackgroundColor="Yellow" HorizontalOptions="EndAndExpand" Padding="30, 0, 100, 0">
+                <Label Text="layout 2"></Label>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

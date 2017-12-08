@@ -29,8 +29,6 @@ namespace XamarinStore
             string name = "";
             string passwd = "";
             User user;
-            //ObservableCollection<User> userList = new ObservableCollection<User>(await App.DataRepo.GetAllUsers());
-            //user = userList.SingleOrDefault(t => t.Nick == name);
             name = txtNick.Text.ToString();
             passwd = txtPasswd.Text.ToString();
             //Comprobamos los datos

@@ -57,6 +57,7 @@
     <Compile Include="user\UserActivity.xaml.cs">
       <DependentUpon>UserActivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="utils\OperationUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -95,9 +96,7 @@
     <None Include="assets\store.db3" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="user\UserActivity.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
