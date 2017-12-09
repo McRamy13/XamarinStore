@@ -8,30 +8,34 @@ using System.Collections.ObjectModel;
 
 namespace XamarinStore.model
 {
+    /// <summary>
+    /// Propiedad User
+    /// </summary>
     [Table("User")]
     public class User
     {
-        //properties
+        /// <summary>
+        /// Propiedad IdUser
+        /// </summary>
         [PrimaryKey,  Column("_codUser"), MaxLength(4), Unique]
         public string IdUser { get; set; }
 
+        /// <summary>
+        /// Propiedad Nick
+        /// </summary>
         [MaxLength(50), NotNull, Unique]
         public string Nick { get; set; }
 
+        /// <summary>
+        /// Propiedad Password
+        /// </summary>
         [MaxLength(10), NotNull, Unique]
         public string Password { get; set; }
 
+        /// <summary>
+        /// Propiedad Tipo
+        /// </summary>
         [MaxLength(7), NotNull]
         public string Tipo { get; set; }
-
-        public static implicit operator Task<object>(User v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static implicit operator User(ObservableCollection<User> v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

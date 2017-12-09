@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace XamarinStore.UWP
 {
+    /// <summary>
+    /// Clase FileAccessHelper
+    /// </summary>
     class FileAccessHelper
     {
+        /// <summary>
+        /// El método GetLocalFilePath obtendrá la ruta de la BBDD
+        /// </summary>
+        /// <param name="filename">Nombre del fichero</param>
+        /// <returns></returns>
         public static string GetLocalFilePath(string filename)
         {
             string path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;

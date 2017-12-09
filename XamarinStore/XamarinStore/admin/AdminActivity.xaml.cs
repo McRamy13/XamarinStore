@@ -22,7 +22,13 @@ namespace XamarinStore.admin
             InitializeComponent();
         }
 
-        //El nuevo constructor va a recibir el usuario que le hemos pasado por BBDD
+        /// <summary>
+        /// El nuevo constructor va a recibir el usuario que le hemos pasado por BBDD
+        /// </summary>
+        /// <remarks>
+        /// Llamará al método de carga de datos.
+        /// </remarks>
+        /// <param name="user">Usuario que hemos pasado al llamar a esta actividad</param>
         public AdminActivity(User user)
         {
             this.user = user;
@@ -31,6 +37,14 @@ namespace XamarinStore.admin
 
         }
 
+        /// <summary>
+        /// Método para leer los datos en la BBDD
+        /// </summary>
+        /// <remarks>
+        /// Usando una colección observable, rellenamos los datos
+        /// obtenidos de la lista de pedidos. Pasamos como ItemsSource
+        /// la colección. Esto hará que se muestre en la aplicación
+        /// </remarks>
         private async Task LoadDataAsync()
         {
             List<Pedido> listPedidos = new List<Pedido>();

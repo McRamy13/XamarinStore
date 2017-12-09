@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace XamarinStore.model
 {
+    /// <summary>
+    /// Clase order
+    /// </summary>
     public class Order
     {
         public string NomUser { get; set; }

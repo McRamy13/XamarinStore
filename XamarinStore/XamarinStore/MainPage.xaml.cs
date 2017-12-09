@@ -13,6 +13,9 @@ namespace XamarinStore
 {
     public partial class MainPage : ContentPage
     {
+        /// <summary>
+        /// El constructor inicializa los componentes y gestiona los eventos
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
@@ -22,6 +25,16 @@ namespace XamarinStore
             };
         }
 
+        /// <summary>
+        /// Comprueba que el usuario exista en la BBDD y sea correcto
+        /// </summary>
+        /// <remarks>
+        /// Recogemos los datos introducidos en los campos de texto. Una vez
+        /// recogidos los datos, comprobamos que en la BBDD haya un usuario con ese
+        /// nombre. En ese caso, comprobamos si la contraseña es igual.
+        /// Si los datos son correctos, abrimos la actividad del usuario o el administrador
+        /// en función del tipo de usuario.
+        /// </remarks>
         private async void CheckUserAsync()
         {
             //Obtenemos los datos
@@ -58,9 +71,14 @@ namespace XamarinStore
 
         }
 
-        private async Task ShowClientActivityAsync(string v, User user)
+        /// <summary>
+        /// Método para llamar a las distintas actividades
+        /// </summary>
+        /// <param name="userType">Tipo de usuario para llamar a la actividad</param>
+        /// <param name="user">Objeto usuario que ha llamado a la actividad</param>
+        private async Task ShowClientActivityAsync(string userType, User user)
         {
-            switch (v)
+            switch (userType)
             {
                 case "user":
                     await Navigation.PushModalAsync(new UserActivity(user));
@@ -69,7 +87,6 @@ namespace XamarinStore
                     await Navigation.PushModalAsync(new AdminActivity(user));
                     break;
             }
-
         }
     }
 }
