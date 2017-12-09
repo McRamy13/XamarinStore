@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['initializecomponent',['InitializeComponent',['../class_xamarin_store_1_1_app.html#abc964a51750884ea9094529b9e6175b4',1,'XamarinStore.App.InitializeComponent()'],['../class_xamarin_store_1_1_main_page.html#a47b40ddd8a47e3d6862ef971def5eaa4',1,'XamarinStore.MainPage.InitializeComponent()'],['../class_xamarin_store_1_1admin_1_1_admin_activity.html#afaca39ebb9112dd8122427fc15b985e9',1,'XamarinStore.admin.AdminActivity.InitializeComponent()'],['../class_xamarin_store_1_1_app.html#abc964a51750884ea9094529b9e6175b4',1,'XamarinStore.App.InitializeComponent()'],['../class_xamarin_store_1_1_main_page.html#a47b40ddd8a47e3d6862ef971def5eaa4',1,'XamarinStore.MainPage.InitializeComponent()'],['../class_xamarin_store_1_1user_1_1_user_activity.html#a5e62f31e5b69c16085372c9c656fee4b',1,'XamarinStore.user.UserActivity.InitializeComponent()']]]
+];
